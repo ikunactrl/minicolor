@@ -20,7 +20,15 @@
     </br>
     <input type="text" id="myInput" class="styled-input" placeholder="请输入颜色代码"></input>
     <button onclick="duqu()"class="styled-button">推理颜色</button>
-    <div id="color"></div>
+    <div id="color"class="colorCode"></div>
+
+    </br>
+    <input id="inputcolorcode1"placeholder="颜色代码起始位置"></input>
+    <input id="inputcolorcode2"placeholder="颜色代码结束位置"></input>
+    <input id="inputTEXT"placeholder="插入颜色代码的文本"></input>
+    <button onclick="dianji()">开始推理渐变色</button>
+    <div id="output"></div>
+    <p class="colorCode">*生成的渐变代码不一定能显示出来（数字太多会屏蔽）</p>
     </div>
     <script src="script.js"></script>
 </body>

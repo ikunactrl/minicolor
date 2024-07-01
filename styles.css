@@ -6,7 +6,7 @@
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: 200px;
+    width: 250px;
     margin: 0 auto;
 }
 
@@ -22,3 +22,44 @@
     font-family: monospace;
 }
 
+button {
+    padding: 12px 25px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: #99cafd;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+
+}
+
+button:hover {
+    background-color: #0f69c9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+input {
+    width: 100%;
+    max-width: 300px;
+    padding: 15px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: #ffffff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    background-color: #d9ecf1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}

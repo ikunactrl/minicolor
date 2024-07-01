@@ -77,3 +77,53 @@ function insertCInHexColor(hexColor) {
 
     return modifiedColor;
 }
+function hexToRgb(hex) {
+    let bigint = parseInt(hex, 16);
+    let r = (bigint >> 16) & 255;
+    let g = (bigint >> 8) & 255;
+    let b = bigint & 255;
+    return [r, g, b];
+}
+
+function rgbToHex(r, g, b) {
+    return ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1).toUpperCase();
+}
+
+function interpolateColor(startColor, endColor, factor) {
+    let result = startColor.slice();
+    for (let i = 0; i < 3; i++) {
+        result[i] = Math.round(result[i] + factor * (endColor[i] - startColor[i]));
+    }
+    return result;
+}
+
+function applyGradientToText(startHex, endHex, text) {
+    const startColor = hexToRgb(startHex);
+    const endColor = hexToRgb(endHex);
+    const length = text.length;
+    let gradientTextArray = [];
+
+    for (let i = 0; i < length; i++) {
+        let factor = i / (length - 1);
+        let interpolatedColor = interpolateColor(startColor, endColor, factor);
+        let hexColor = rgbToHex(interpolatedColor[0], interpolatedColor[1], interpolatedColor[2]);
+        gradientTextArray.push(`#c${hexColor}`);
+    }
+
+    let coloredTextArray = [];
+    for (let i = 0; i < length; i++) {
+        coloredTextArray.push(`${gradientTextArray[i]}${text[i]}`);
+    }
+
+    return coloredTextArray.join('');
+}
+
+
+function dianji() {
+    const startHex = document.getElementById("inputcolorcode1").value;
+    const endHex = document.getElementById("inputcolorcode2").value;
+    const text = document.getElementById("inputTEXT").value;
+    const outputDiv = document.getElementById('output');
+outputDiv.textContent = applyGradientToText(startHex, endHex, text);
+}
+
