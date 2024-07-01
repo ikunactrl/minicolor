@@ -42,9 +42,22 @@ function updateColor() {
     var text = divs.innerText
     divs.innerText = "颜色16进制代码：" + divs.innerText;
     var divs = document.getElementById("colorCode2")
-    divs.innerText = "迷你世界颜色代码：#c" + text.substring(1, 7);
+    divs.innerText = "迷你世界颜色代码：#c" + capitalizeText(text.substring(1, 7));
 }
+function capitalizeText(text) {
+    let capitalizedText = '';
 
+    for (let i = 0; i < text.length; i++) {
+        let char = text.charAt(i);
+        if (char.match(/[a-z]/i)) {
+            capitalizedText += char.toUpperCase();
+        } else {
+            capitalizedText += char;
+        }
+    }
+
+    return capitalizedText;
+}
 // 初始化颜色
 updateColor();
 function duqu() {
@@ -59,7 +72,8 @@ function insertCInHexColor(hexColor) {
     }
 
     // 在第一个数字和“#”之间插入“c”
-    let modifiedColor = hexColor.replace(/^#/, '#c');
+    var text =capitalizeText(hexColor.substring(1, 7))
+    let modifiedColor = "#c"+ text;
 
     return modifiedColor;
 }
