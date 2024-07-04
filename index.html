@@ -2,33 +2,55 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="https://i.postimg.cc/76VYNpSr/logo.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>迷你世界颜色推理器</title>
     <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="description" content="迷你世界颜色推理器是一个帮助迷你世界玩家打出彩色字体的实用工具（乐">
+    <meta name="keywords" content="迷你世界, 颜色推理器, 迷你世界工具, 迷你世界玩家，迷你世界彩字，彩字">
+    <meta name="author" content="Your Name">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="迷你世界颜色推理器">
+    <meta property="og:description" content="迷你世界颜色推理器是一个帮助迷你世界玩家打出彩色字体的实用工具。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ikunactrl.github.io/minicolor/">
+    <meta property="og:image" content="https://i.postimg.cc/76VYNpSr/logo.png">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="迷你世界颜色推理器">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="迷你世界颜色推理器">
+    <meta name="twitter:description" content="迷你世界颜色推理器是一个帮助迷你世界玩家打出彩色字体的实用工具。">
+    <meta name="twitter:image" content="https://i.postimg.cc/76VYNpSr/logo.png">
 </head>
 
 <body>
     <div id="colorPicker">
+        <p>工具作者:<i><b>Subreme-GNB</b></i></p>
+        <p>作者又名:坤</p>
+        <p>作者迷你号:353120968</p>
         <p>颜色<input type="range" id="hue" min="0" max="360" value="0" step="1" oninput="updateColor()" /></p>
         <p>饱和度<input type="range" id="saturation" min="0" max="100" value="100" step="1" oninput="updateColor()" /></p>
         <p>亮度<input type="range" id="brightness" min="0" max="100" value="100" step="1" oninput="updateColor()" /></p>
-        <p>颜色预览<div id="colorPreview"></div></p>
-        <div id="colorCode"class="colorCode">#ffffff</div>
-        <div id="colorCode2"class="colorCode">#ffffff</div>
+        <p>颜色预览
+        <div id="colorPreview"></div>
+        </p>
+        <div id="colorCode" class="colorCode">#ffffff</div>
+        <div id="colorCode2" class="colorCode">#ffffff</div>
         </br>
-    </br>
-    <input type="text" id="myInput" class="styled-input" placeholder="请输入颜色代码"></input>
-    <button onclick="duqu()"class="styled-button">推理颜色</button>
-    <div id="color"class="colorCode"></div>
+        </br>
+        <input type="text" id="myInput" class="styled-input" placeholder="请输入颜色代码"></input>
+        <button onclick="duqu()" class="styled-button">推理颜色</button>
+        <div id="color" class="colorCode"></div>
 
-    </br>
-    <input id="inputcolorcode1"placeholder="颜色代码起始位置"></input>
-    <input id="inputcolorcode2"placeholder="颜色代码结束位置"></input>
-    <input id="inputTEXT"placeholder="插入颜色代码的文本"></input>
-    <button onclick="dianji()">开始推理渐变色</button>
-    <div id="output"></div>
-    <p class="colorCode">*生成的渐变代码不一定能显示出来（数字太多会屏蔽）</p>
+        </br>
+        <input id="inputcolorcode1" placeholder="颜色代码起始位置"></input>
+        <input id="inputcolorcode2" placeholder="颜色代码结束位置"></input>
+        <input id="inputTEXT" placeholder="插入颜色代码的文本"></input>
+        <button onclick="dianji()">开始推理渐变色</button>
+        <div id="output"></div>
+        <p class="colorCode">*生成的渐变代码不一定能显示出来（数字太多会屏蔽）</p>
     </div>
     <script src="script.js"></script>
 </body>
