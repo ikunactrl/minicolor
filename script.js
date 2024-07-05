@@ -72,8 +72,8 @@ function insertCInHexColor(hexColor) {
     }
 
     // 在第一个数字和“#”之间插入“c”
-    var text =capitalizeText(hexColor.substring(1, 7))
-    let modifiedColor = "#c"+ text;
+    var text = capitalizeText(hexColor.substring(1, 7))
+    let modifiedColor = "#c" + text;
 
     return modifiedColor;
 }
@@ -120,10 +120,18 @@ function applyGradientToText(startHex, endHex, text) {
 
 
 function dianji() {
-    const startHex = document.getElementById("inputcolorcode1").value;
-    const endHex = document.getElementById("inputcolorcode2").value;
-    const text = document.getElementById("inputTEXT").value;
+    var text = document.getElementById("inputcolorcode1").value;
+    if (text.includes("#")) {
+        text = text.substring(1, 7)
+    }
+    const startHex = text
+    var text = document.getElementById("inputcolorcode2").value;
+    if (text.includes("#")) {
+        text = text.substring(1, 7)
+    }
+    const endHex = text;
+    const text2 = document.getElementById("inputTEXT").value;
     const outputDiv = document.getElementById('output');
-outputDiv.textContent = applyGradientToText(startHex, endHex, text);
+    outputDiv.textContent = applyGradientToText(startHex, endHex, text2);
 }
 
