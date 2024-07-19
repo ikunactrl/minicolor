@@ -1,4 +1,4 @@
-this is minicolor.
+this is mini-colortext tool.
 </br>
 没啥好说的...
 </br>
