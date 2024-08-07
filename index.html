@@ -51,6 +51,26 @@
         <div id="output"></div>
         <p class="colorCode">*生成的渐变代码不一定能显示出来（数字太多会屏蔽）</p>
     </div>
+    <div>
+        <p>单位换算脚本</p>
+        <p>local function number_gs(num)
+    if num < 1000000 then
+        return (num)
+    elseif num < 10 ^ 8 * 100 then
+        local a = math.floor(num / 10 ^ 4)
+        return (a .. "万")
+    elseif num < 10 ^ 12 * 100 then
+        local a = math.floor(num / 10 ^ 8)
+        return (a .. "亿")
+    elseif num < 10 ^ 16 * 100 then
+        local a = math.floor(num / 10 ^ 12)
+        return (a .. "兆")
+    else
+        local a = math.floor(num / 10 ^ 16)
+        return (a .. "京")
+    end
+end</p>
+    </div>
     <script src="script.js"></script>
 </body>
 
